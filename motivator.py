@@ -1,5 +1,6 @@
 from nis import match
 import requests
+from twillio_conn import send_whatsapp_text,client
 
 
 def get_quote_of_the_day(category):
@@ -18,4 +19,4 @@ def get_quote_of_the_day(category):
     return quote
 
 quote = get_quote_of_the_day(category="inspire")
-print (quote)
+send_whatsapp_text(client,quote)
