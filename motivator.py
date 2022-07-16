@@ -1,14 +1,13 @@
 import requests
 
-url = "https://quotes.rest/qod?language=en"
-res = requests.get(url=url)
-print (res)
-data = res.json()
-print(type(data))
-#print(data['contents']['quotes'][0]['quote'])
 
-dict_data = data
+def get_quote_of_the_day(category):
 
-#print (dict_data)
+    url = "https://quotes.rest/qod?language=en&category={}".format(category)
+    res = requests.get(url=url)
+    dict_data = res.json()
+    quote = (dict_data['contents']['quotes'][0]['quote'])
+    return quote
 
-print (dict_data['contents']['quotes'][0]['quote'])
+quote = get_quote_of_the_day(category="inspire")
+print (quote)
