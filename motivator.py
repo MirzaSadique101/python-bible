@@ -9,6 +9,6 @@ print(type(data))
 
 dict_data = data
 
-print (dict_data)
+#print (dict_data)
 
-#print (dict_data['contents']['quotes'][0]['quote'])
+print (dict_data['contents']['quotes'][0]['quote'])
